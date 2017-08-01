@@ -1,6 +1,10 @@
 'use strict';
 
+<<<<<<< HEAD
 pinApp.controller("UserController", function($scope, $window, UserFactory) {
+=======
+pinApp.controller("userController", function($scope, $window, userFactory) {
+>>>>>>> master
 
   $scope.account = {
     email: "",
@@ -8,6 +12,7 @@ pinApp.controller("UserController", function($scope, $window, UserFactory) {
   };
 
   $scope.register = () => {
+<<<<<<< HEAD
     // TODO validate that user doesn't exist
     console.log("you clicked register");
 
@@ -34,3 +39,21 @@ pinApp.controller("UserController", function($scope, $window, UserFactory) {
 //   };
   
 // });
+=======
+    console.log("you clicked register");
+    userFactory.createUser($scope.account)
+    .then( (userData) => {
+      console.log("User", userData);
+      $scope.login();
+    });
+  };
+
+  $scope.login = () => {
+    userFactory.loginUser($scope.account)
+    .then( (userData) => {
+      console.log("userData", userData);
+      $window.location.href = '#!/pin/view';
+    });
+  };
+});
+>>>>>>> master

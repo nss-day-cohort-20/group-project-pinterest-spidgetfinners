@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SpidgetFinners</title>
+     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="lib/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+
+
+<body>
+
+  
+  
+
+<body ng-app="PinApp">
+
+
+  
+  <div ng-include="'partials/navbar.html'">
+
+  
+      <div ng-view></div>
+    </div>
+  
+
+  
+  <script type="text/javascript" src="lib/node_modules/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="lib/node_modules/bootstrap/dist/js/bootstrap.min.js">
+  </script>
+  <script type="text/javascript" src="lib/node_modules/angular/angular.min.js"></script>
+  <script type="text/javascript" src="lib/node_modules/angular-route/angular-route.min.js"></script>
+  <script type="text/javascript" src="lib/node_modules/firebase/firebase.js"></script>
+  <!-- app files -->
+  <script type="text/javascript" src="app/app.js"></script>
+  <!-- providers -->
+  <script src="app/values/FBcreds.js"></script>
+  <script src="app/factories/boardFactory.js"></script>
+  <script src="app/factories/userFactory.js"></script>
+  <script src="app/factories/navFactory.js"></script>
+  <script src="app/factories/pinFactory.js"></script>
+  <script src="app/factories/filterFactory.js"></script>
+  <!-- controllers -->
+  <script src="app/controllers/pinController.js"></script>
+  <script src="app/controllers/boardController.js"></script>
+  <script src="app/controllers/userController.js"></script>
+  <script src="app/controllers/navController.js"></script>
+</body>
+</html>

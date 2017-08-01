@@ -1,6 +1,6 @@
 'use strict';
 
-pinApp.controller("userController", function($scope, $window, userFactory) {
+pinApp.controller("UserController", function($scope, $window, userFactory) {
 
   $scope.account = {
     email: "",
@@ -23,5 +23,14 @@ pinApp.controller("userController", function($scope, $window, userFactory) {
       $window.location.href = '#!/pin/view';
     });
   };
+
+  $scope.logout = () => {
+    userFactory.logoutUser($scope.account)
+    .then( (userData) => {
+      console.log("logout clicked");
+      $window.location.href = '#!/';
+    });
+  };
+
 });
 

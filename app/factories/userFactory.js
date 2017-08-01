@@ -1,10 +1,6 @@
 'use strict';
 
-<<<<<<< HEAD
-pinApp.factory("userFactory", function($q, $http, FirebaseUrl, FBCreds) {
-=======
 pinApp.factory("userFactory", function($q, $http, FirebaseUrl, FBcreds) {
->>>>>>> master
 
   var config = {
     apiKey: FBcreds.key,

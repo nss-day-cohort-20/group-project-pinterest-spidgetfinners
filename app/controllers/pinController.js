@@ -1,6 +1,6 @@
 'use strict';
 
-pinApp.controller("pinController", function($scope, $window, pinFactory, filterFactory, userFactory) {
+pinApp.controller("pinController", function($scope, $window, pinFactory, userFactory) {
 
   let currentUser = null;
 

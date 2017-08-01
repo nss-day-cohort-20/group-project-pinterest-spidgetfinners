@@ -1,8 +1,8 @@
 'use strict';
                                                           // 'da heck is this?
-pinApp.controller("navController", function($scope, $window, filterFactory, userFactory) {
+pinApp.controller("navController", function($scope, $window, userFactory) {
 
-  $scope.searchText = filterFactory;
+  // $scope.searchText = filterFactory;
   $scope.isLoggedIn = false;
 
   firebase.auth().onAuthStateChanged(function(user) {

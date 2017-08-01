@@ -7,62 +7,25 @@
   <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body ng-app="PinApp">
-<<<<<<< HEAD
 
-  <div ng-include="'partials/navbar.html'"></div>
-  
-  <div class="row">
-    <div class="col-xs-10 col-xs-offset-1 main-container">
+  <div ng-include="'partials/nav-bar.html'">
       <div ng-view></div>
-    </div>
   </div>
-  
-=======
-    <div ng-include="'partials/nav-bar.html'">
-        <div ng-view></div>
-    </div>
-    <script type="text/javascript" src="lib/node_modules/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="lib/node_modules/bootstrap/dist/js/bootstrap.min.js">
-    </script>
-    <script type="text/javascript" src="lib/node_modules/angular/angular.min.js"></script>
-    <script type="text/javascript" src="lib/node_modules/angular-route/angular-route.min.js"></script>
-    <script type="text/javascript" src="lib/node_modules/firebase/firebase.js"></script>
-    <!-- app file -->
-    <script type="text/javascript" src="app/app.js"></script>
-    <!-- providers -->
-    <script src="app/values/FBcreds.js"></script>
-    <script src="app/factories/userFactory.js"></script>
-    <script src="app/factories/pinFactory.js"></script>
-    <!-- controllers -->
-    <script src="app/controllers/pinController.js"></script>
-    <script src="app/controllers/boardController.js"></script>
-    <script src="app/controllers/userController.js"></script>
-    <script src="app/controllers/navController.js"></script>
-</body>
->>>>>>> aa4afbca630f480464f071a9f9f19f2aa0a49fb1
-
-
-
-
-  <!-- dependencies -->
   <script type="text/javascript" src="lib/node_modules/jquery/dist/jquery.min.js"></script>
-  <script type="text/javascript" src="lib/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="lib/node_modules/bootstrap/dist/js/bootstrap.min.js">
+  </script>
   <script type="text/javascript" src="lib/node_modules/angular/angular.min.js"></script>
   <script type="text/javascript" src="lib/node_modules/angular-route/angular-route.min.js"></script>
   <script type="text/javascript" src="lib/node_modules/firebase/firebase.js"></script>
-  <!-- app files -->
+  <!-- app file -->
   <script type="text/javascript" src="app/app.js"></script>
   <!-- providers -->
   <script src="app/values/FBcreds.js"></script>
-  <script src="app/factories/boardFactory.js"></script>
   <script src="app/factories/userFactory.js"></script>
-  <script src="app/factories/navFactory.js"></script>
   <script src="app/factories/pinFactory.js"></script>
-  <script src="app/factories/filterFactory.js"></script>
   <!-- controllers -->
   <script src="app/controllers/pinController.js"></script>
   <script src="app/controllers/boardController.js"></script>
   <script src="app/controllers/userController.js"></script>
   <script src="app/controllers/navController.js"></script>
 </body>
-</html>

@@ -8,8 +8,12 @@
 </head>
 <body ng-app="PinApp">
 
-  <div ng-include="'partials/nav-bar.html'">
+  <!-- Remember to put the path in single quotes when using ng-include -->
+  <div ng-include="'partials/nav-bar.html'"></div>
+  <div class="row">
+    <div class="col-xs-10 col-xs-offset-1 main-container">
       <div ng-view></div>
+    </div>
   </div>
 
 

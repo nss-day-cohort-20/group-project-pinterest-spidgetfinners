@@ -18,4 +18,8 @@ pinApp.controller("NavController", function($scope, $window, userFactory) {
     }
   });
 
+  $scope.logout = () => {
+    userFactory.logoutUser();
+  };
+
 });

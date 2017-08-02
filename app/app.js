@@ -19,7 +19,7 @@ let isAuth =(userFactory) => {
 pinApp.config( ($routeProvider) => {
   $routeProvider
   .when('/', {
-    templateUrl: 'partials/create-boardForm.html',
+    templateUrl: 'partials/login.html',
     controller: 'UserController'
   })
   .when('/pin/view', {

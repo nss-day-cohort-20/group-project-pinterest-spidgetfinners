@@ -24,12 +24,12 @@ pinApp.config( ($routeProvider) => {
   })
   .when('/pin/view', {
     templateUrl: 'partials/home.html',
-    controller: 'pinController',
+    controller: 'PinController',
     resolve: {isAuth}
   })
   .when('/pin/edit/board', {
     templateUrl: 'partials/pin-form.html',
-    controller: 'boardController',
+    controller: 'BoardController',
     resolve: {isAuth}
   })
   .otherwise('/');

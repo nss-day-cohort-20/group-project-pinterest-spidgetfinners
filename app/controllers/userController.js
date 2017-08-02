@@ -1,17 +1,18 @@
 'use strict';
 
-pinApp.controller("userController", function($scope, $window, userFactory) {
+pinApp.controller("UserController", function($scope, $window, userFactory) {
 
   $scope.account = {
     email: "",
     password: ""
   };
 
-  $scope.register = () => {
+   $scope.register = () => {
+    // TODO validate that user doesn't exist
     console.log("you clicked register");
     userFactory.createUser($scope.account)
     .then( (userData) => {
-      console.log("User", userData);
+      console.log("New User!", userData);
       $scope.login();
     });
   };
@@ -20,7 +21,9 @@ pinApp.controller("userController", function($scope, $window, userFactory) {
     userFactory.loginUser($scope.account)
     .then( (userData) => {
       console.log("userData", userData);
-      $window.location.href = '#!/pin/view';
+      $window.location.href = '#!/login';
     });
   };
+
 });
+

@@ -2,7 +2,6 @@
                                                           
 pinApp.controller("NavController", function($scope, $window, userFactory) {
 
-  
   $scope.isLoggedIn = false;
 
   firebase.auth().onAuthStateChanged(function(user) {
@@ -12,7 +11,7 @@ pinApp.controller("NavController", function($scope, $window, userFactory) {
       console.log("logged in t-f", $scope.isLoggedIn );
       $scope.$apply();
     } else {
-      $scope.isLoggedIn = true;
+      $scope.isLoggedIn =false;
       $scope.$apply();
       console.log("user logged in?", $scope.isLoggedIn);
       $window.location.href = "#!/login";
@@ -20,7 +19,6 @@ pinApp.controller("NavController", function($scope, $window, userFactory) {
   });
 
   $scope.logout = () => {
-    console.log("logout clicked");
     userFactory.logoutUser();
   };
 

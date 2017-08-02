@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default" ng-controller="NavController">
+<nav class="navbar navbar-default" ng-controller="UserController">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -9,16 +9,6 @@
       </button>
       <a class="navbar-brand" href="#/">Home</a>
     </div>
-
-
-
-
-
-
-
-
-
-
    <!-- Input field -->
     <div class="col-xs-6 searchBox" ng-show="isLoggedIn">
       <div class="input-group">
@@ -28,26 +18,13 @@
         <input type="text" class="form-control" placeholder="Search for..." ng-model="searchText.searchTerm">
       </div>
     </div>
-
-
-
-
-
-
-
-
-
-
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li ng-show="!isLoggedIn"><a ng-href="#!/login">Login</a></li>
+        <li ng-show="!isLoggedIn"><a ng-href="#!/login" ng-click="login()">Login</a></li>
         <li ng-show="isLoggedIn"><a ng-href="#!/logout" ng-click="logout()">Logout</a></li>
         <li ng-show="!isLoggedIn"><a ng-href="#!/pin/new">Register</a></li>
       </ul>
     </div>
   </div>
 </nav>
-
-
-

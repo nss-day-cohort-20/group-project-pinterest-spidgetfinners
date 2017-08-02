@@ -49,8 +49,8 @@ pinApp.factory("PinFactory", function($q, $http, FirebaseUrl) {
     };
 
     let deleteBoard = (boardId) => {
-        return $q((resolve, reject) => {
-            if (boardId) {
+      return $q((resolve, reject) => {
+        if (boardId) {
                 $http.delete(`${FirebaseUrl}boards/${boardId}.json`)
                     .then((data) => {
                         resolve(data);
@@ -64,7 +64,19 @@ pinApp.factory("PinFactory", function($q, $http, FirebaseUrl) {
         });
     };
 
+    let getPins = () => {        
+      return $q((resolve, reject) => {
+        $http.get(`${FirebaseUrl}/image.json`)
+        .then((pinData) => {
+          resolve(pinData);
+        })
+        .catch((err) => {
+          console.log("oops error");
+          reject(err);
+        });
+      });
+    }; 
 
 
-    return { getUserBoard, postNewBoard, editNewBoard, deleteBoard };
+    return { getUserBoard, postNewBoard, editNewBoard, deleteBoard, getPins };
 });

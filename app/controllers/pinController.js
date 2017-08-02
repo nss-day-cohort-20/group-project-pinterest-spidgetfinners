@@ -26,7 +26,7 @@ pinApp.controller("PinController", function($scope, $window, PinFactory, userFac
             });
     }
 
-   
+
 
 
 

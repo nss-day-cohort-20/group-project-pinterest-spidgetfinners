@@ -1,5 +1,5 @@
 'use strict';
-                                                          
+
 pinApp.controller("NavController", function($scope, $window, userFactory) {
 
   $scope.isLoggedIn = false;

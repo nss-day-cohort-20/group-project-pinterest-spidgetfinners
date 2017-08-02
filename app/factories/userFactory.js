@@ -43,9 +43,6 @@ pinApp.factory("userFactory", function($q, $http, FirebaseUrl, FBcreds) {
     return $q( (resolve, reject) => {
       firebase.auth().signInWithEmailAndPassword(userObj.email, userObj.password)
       .then( (user) => {
-        // have to set the current user here because the controllers that call `getUser`
-        // ( todo-controller, for example) are loading before the `onAuthStateChanged`
-        // listener was kicking in and setting the user value
         currentUser = user.uid;
         resolve(user);
       })

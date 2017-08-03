@@ -19,7 +19,7 @@ pinApp.factory("BoardFactory", function($q, $http, FirebaseUrl) {
 
   let postNewBoard = (newBoard) => {
     return $q((resolve, reject) => {
-      $http.post(`${FirebaseUrl}pics.json`,
+      $http.post(`${FirebaseUrl}boards.json`,
       angular.toJson(newBoard))
       .then((newBoardData) => {
         resolve(newBoardData);

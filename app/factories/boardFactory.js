@@ -3,10 +3,10 @@
 pinApp.factory("BoardFactory", function($q, $http, FirebaseUrl) {
 
 
-  let getUserBoard = (userId) => {
+  let getAllBoards = (userId) => {
     console.log("userId", userId);
     return $q((resolve, reject) => {
-      $http.get(`${FirebaseUrl}boards.json?orderBy="uid"&equalTo="${userId}"`)
+      $http.get(`${FirebaseUrl}board.json?orderBy="uid"&equalTo="${userId}"`)
       .then((boardData) => {
         resolve(boardData);
       })
@@ -19,7 +19,7 @@ pinApp.factory("BoardFactory", function($q, $http, FirebaseUrl) {
 
   let postNewBoard = (newBoard) => {
     return $q((resolve, reject) => {
-      $http.post(`${FirebaseUrl}boards.json`,
+      $http.post(`${FirebaseUrl}board.json`,
       angular.toJson(newBoard))
       .then((newBoardData) => {
         resolve(newBoardData);
@@ -34,7 +34,7 @@ pinApp.factory("BoardFactory", function($q, $http, FirebaseUrl) {
     return $q((resolve, reject) => {
       let boardId = board.id;
       if (boardId) {
-        $http.put(`${FirebaseUrl}boards/${boardId}.json`,
+        $http.put(`${FirebaseUrl}board/${boardId}.json`,
         angular.toJson(board))
         .then((data) => {
           resolve(data);
@@ -51,7 +51,7 @@ pinApp.factory("BoardFactory", function($q, $http, FirebaseUrl) {
   let deleteBoard = (boardId) => {
     return $q((resolve, reject) => {
       if (boardId) {
-        $http.delete(`${FirebaseUrl}boards/${boardId}.json`)
+        $http.delete(`${FirebaseUrl}board/${boardId}.json`)
         .then((data) => {
           resolve(data);
         })
@@ -64,5 +64,5 @@ pinApp.factory("BoardFactory", function($q, $http, FirebaseUrl) {
     });
   };
 
-    return { getUserBoard, postNewBoard, editNewBoard, deleteBoard };
+    return { getAllBoards, postNewBoard, editNewBoard, deleteBoard };
 });

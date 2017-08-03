@@ -42,5 +42,7 @@ pinApp.config( ($routeProvider) => {
     controller: 'PinController',
     resolve: {isAuth}
   })
-  .otherwise('/');
+  .otherwise('/pin/view');
 });
+
+

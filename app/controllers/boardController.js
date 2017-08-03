@@ -10,4 +10,4 @@ pinApp.controller("BoardController", function($scope, $window, PinFactory, UserF
     uid: UserFactory.getUser()
   };
 
- }); 
+ });

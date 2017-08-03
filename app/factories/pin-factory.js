@@ -1,7 +1,6 @@
 'use strict';
 
-pinApp.factory("BoardFactory", function($q, $http, FirebaseUrl) {
-
+pinApp.factory("PinFactory", function($q, $http, FirebaseUrl) {
 
     let getUserBoard = (userId) => {
         console.log("userId", userId);
@@ -33,6 +32,7 @@ pinApp.factory("BoardFactory", function($q, $http, FirebaseUrl) {
     let editNewBoard = (board) => {
         return $q((resolve, reject) => {
             let boardId = board.id;
+            // PUT the entire obj to FB
             if (boardId) {
                 $http.put(`${FirebaseUrl}boards/${boardId}.json`,
                         angular.toJson(board))
@@ -90,7 +90,6 @@ $('.modalDelete').on('click', function(e) {
     var id = $(this).data('id');
     $('#myModal').data('id', id).modal('show');
 });
-
 
 $('#deleteModalButton').click(function() {
     // handle deletion here

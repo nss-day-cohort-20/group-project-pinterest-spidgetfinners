@@ -34,6 +34,7 @@ pinApp.controller("BoardController", function($scope, $window, PinFactory, UserF
     };
 
 
+
     $scope.saveBoard = () => {
         pinApp.postNewBoard($scope.pinItem)
             .then((data) => {
@@ -43,3 +44,4 @@ pinApp.controller("BoardController", function($scope, $window, PinFactory, UserF
     };
 
 });
+

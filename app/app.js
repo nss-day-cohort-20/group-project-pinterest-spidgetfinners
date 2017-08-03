@@ -44,3 +44,5 @@ pinApp.config( ($routeProvider) => {
   })
   .otherwise('/');
 });
+
+

@@ -1,6 +1,6 @@
 'use strict';
                                                           
-pinApp.controller("NavController", function($scope, $window, userFactory) {
+pinApp.controller("NavController", function($scope, $window, UserFactory) {
 
   $scope.isLoggedIn = false;
 
@@ -19,7 +19,7 @@ pinApp.controller("NavController", function($scope, $window, userFactory) {
   });
 
   $scope.logout = () => {
-    userFactory.logoutUser();
+    UserFactory.logoutUser();
   };
 
 });

@@ -4,9 +4,9 @@ let pinApp = angular.module("PinApp", ["ngRoute"])
 // using the property .constant to set global variable FirebaseUrl
 .constant("FirebaseUrl", "https://spidgetfinners-51a49.firebaseio.com/");
 
-let isAuth =(userFactory) => {
+let isAuth =(UserFactory) => {
   return new Promise( (resolve, reject) => {
-    userFactory.isAuthenticated()
+    UserFactory.isAuthenticated()
     .then( (userBoolean) => {
      if(userBoolean)
       resolve();
@@ -24,12 +24,27 @@ pinApp.config( ($routeProvider) => {
   })
   .when('/pin/view', {
     templateUrl: 'partials/home.html',
-    controller: 'pinController',
+    controller: 'PinController',
     resolve: {isAuth}
   })
-  .when('/pin/edit/board', {
-    templateUrl: 'partials/pin-form.html',
+  .when('/pin/home', {
+    templateUrl: 'partials/my-board.html',
     controller: 'boardController',
+    resolve: {isAuth}
+  })
+  .when('/pin/add-pin-form', {
+    templateUrl: 'partials/add-pin-form.html',
+    controller: 'boardController',
+    resolve: {isAuth}
+  })
+  .when('/board/create', {
+    templateUrl: 'partials/create-new-board.html',
+    controller: 'BoardController',
+    resolve: {isAuth}
+  })
+  .when('/pin/create-pin-form', {
+    templateUrl: 'partials/create-pin-form.html',
+    controller: 'create-pinController',
     resolve: {isAuth}
   })
   .otherwise('/');

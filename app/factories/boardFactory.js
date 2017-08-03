@@ -1,13 +1,14 @@
 'use strict';
 
-pinApp.factory("PinFactory", function($q, $http, FirebaseUrl) {
+pinApp.factory("BoardFactory", function($q, $http, FirebaseUrl) {
 
-    let getAllPins = (userId) => {
+
+    let getUserBoard = (userId) => {
         console.log("userId", userId);
         return $q((resolve, reject) => {
-            $http.get(`${FirebaseUrl}Pins.json?orderBy="uid"&equalTo="${userId}"`)
-                .then((pinData) => {
-                    resolve(pinData);
+            $http.get(`${FirebaseUrl}boards.json?orderBy="uid"&equalTo="${userId}"`)
+                .then((boardData) => {
+                    resolve(boardData);
                 })
                 .catch((err) => {
                     console.log("oops", err);
@@ -16,12 +17,12 @@ pinApp.factory("PinFactory", function($q, $http, FirebaseUrl) {
         });
     };
 
-    let postNewPin = (newPin) => {
+    let postNewBoard = (newBoard) => {
         return $q((resolve, reject) => {
             $http.post(`${FirebaseUrl}pics.json`,
-                    angular.toJson(newPin))
-                .then((newPinData) => {
-                    resolve(newPinData);
+                    angular.toJson(newBoard))
+                .then((newBoardData) => {
+                    resolve(newBoardData);
                 })
                 .catch((err) => {
                     reject(err);
@@ -29,12 +30,12 @@ pinApp.factory("PinFactory", function($q, $http, FirebaseUrl) {
         });
     };
 
-    let editNewPin = (pin) => {
+    let editNewBoard = (board) => {
         return $q((resolve, reject) => {
-            let pinId = pin.id;
-            if (pinId) {
-                $http.put(`${FirebaseUrl}pins/${pinId}.json`,
-                        angular.toJson(pin))
+            let boardId = board.id;
+            if (boardId) {
+                $http.put(`${FirebaseUrl}boards/${boardId}.json`,
+                        angular.toJson(board))
                     .then((data) => {
                         resolve(data);
                     })
@@ -47,10 +48,10 @@ pinApp.factory("PinFactory", function($q, $http, FirebaseUrl) {
         });
     };
 
-    let deletePin = (pinId) => {
+    let deleteBoard = (boardId) => {
         return $q((resolve, reject) => {
-            if (pinId) {
-                $http.delete(`${FirebaseUrl}pins/${pinId}.json`)
+            if (boardId) {
+                $http.delete(`${FirebaseUrl}boards/${boardId}.json`)
                     .then((data) => {
                         resolve(data);
                     })
@@ -65,5 +66,5 @@ pinApp.factory("PinFactory", function($q, $http, FirebaseUrl) {
 
 
 
-    return { getAllPins, postNewPin, editNewPin, deletePin };
+    return { getUserBoard, postNewBoard, editNewBoard, deleteBoard };
 });

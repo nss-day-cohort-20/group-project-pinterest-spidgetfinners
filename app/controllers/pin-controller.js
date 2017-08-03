@@ -25,4 +25,13 @@ pinApp.controller("PinController", function($scope, $window, PinFactory, userFac
       console.log("error", err);
     });
   }
-});
+
+  $scope.savePins = () => {
+    pinApp.postNewItem($scope.pinItem)
+    .then( (data) => {
+      console.log("pin data", data);
+      $window.location.href = '#!/pin/home';
+    });
+  };
+
+}); 

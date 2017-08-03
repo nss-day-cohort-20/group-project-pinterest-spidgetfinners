@@ -48,6 +48,3 @@ $('#deleteModalButton').click(function() {
 
 
 });
-
-
-

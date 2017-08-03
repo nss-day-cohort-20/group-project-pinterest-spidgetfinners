@@ -27,14 +27,9 @@ pinApp.config( ($routeProvider) => {
     controller: 'PinController',
     resolve: {isAuth}
   })
-  .when('/pin/home', {
-    templateUrl: 'partials/my-board.html',
-    controller: 'boardController',
-    resolve: {isAuth}
-  })
   .when('/pin/add-pin-form', {
     templateUrl: 'partials/add-pin-form.html',
-    controller: 'boardController',
+    controller: 'PinController',
     resolve: {isAuth}
   })
   .when('/board/create', {
@@ -44,7 +39,7 @@ pinApp.config( ($routeProvider) => {
   })
   .when('/pin/create-pin-form', {
     templateUrl: 'partials/create-pin-form.html',
-    controller: 'create-pinController',
+    controller: 'PinController',
     resolve: {isAuth}
   })
   .otherwise('/');

@@ -1,6 +1,6 @@
 'use strict';
 
-pinApp.controller("boardController", function($scope, $window, PinFactory, UserFactory) {
+pinApp.controller("BoardController", function($scope, $window, PinFactory, UserFactory) {
 
   $scope.pinTitle = "Add New Task";
   $scope.pinItem = {

@@ -1,6 +1,7 @@
 'use strict';
 
-pinApp.factory("PinFactory", function($q, $http, FirebaseUrl) {
+pinApp.factory("BoardFactory", function($q, $http, FirebaseUrl) {
+
 
   let getUserBoard = (userId) => {
     console.log("userId", userId);
@@ -32,7 +33,6 @@ pinApp.factory("PinFactory", function($q, $http, FirebaseUrl) {
   let editNewBoard = (board) => {
     return $q((resolve, reject) => {
       let boardId = board.id;
-      // PUT the entire obj to FB
       if (boardId) {
         $http.put(`${FirebaseUrl}boards/${boardId}.json`,
         angular.toJson(board))
@@ -64,18 +64,5 @@ pinApp.factory("PinFactory", function($q, $http, FirebaseUrl) {
     });
   };
 
-    let getPins = () => {        
-      return $q((resolve, reject) => {
-        $http.get(`${FirebaseUrl}/image.json`)
-        .then((pinData) => {
-          resolve(pinData);
-        })
-        .catch((err) => {
-          console.log("oops error");
-          reject(err);
-        });
-      });
-    }; 
-
-  return { getUserBoard, postNewBoard, editNewBoard, deleteBoard, getPins };
+    return { getUserBoard, postNewBoard, editNewBoard, deleteBoard };
 });

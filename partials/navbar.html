@@ -7,42 +7,21 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#/">Home</a>
+      <a class="navbar-brand" href="#/">Spidgetfinners</a>
     </div>
 
-
-   <!-- Input field -->
     <div class="col-xs-6 searchBox" ng-show="isLoggedIn">
       <div class="input-group">
         <span class="input-group-btn">
           <button class="btn btn-default"><i class="fa fa-search" aria-hidden="true"></i></button>
         </span>
-        <input type="text" class="form-control" placeholder="Search for..." ng-model="searchText.searchTerm">
       </div>
     </div>
-
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li ng-show="!isLoggedIn"><a ng-href="#!/login">Login</a></li>
         <li ng-show="isLoggedIn"><a ng-href="#!/logout" ng-click="logout()">Logout</a></li>
       </ul>
-    </div>
-    <div>
-       <nav ng-controller="NavController">
-        <div class="nav-wrapper">
-          <a href="#/home" class="navbar-brand brand-name">PintoWin</a>
-          <ul id="nav-bar" class="row">
-            <li ng-show=""><a href="#!/home">Home</a></li>
-            <li ng-show=""><a href="#!/create-pinForm">Create Board</a></li>
-            <li ng-show=""><a href="#!/">add-pinform</a>Add Pins</li>
-            <li ng-show=""><a href="#!/my-board">My Board</a></li>
-            <li ng-show=""><a href="#/" ng-click="logout()">Log Out</a></li>
-          </ul>
-        </div>
-      </nav>
-      <br>
     </div>
   </div>
 </nav>

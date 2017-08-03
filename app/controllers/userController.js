@@ -1,6 +1,6 @@
 'use strict';
 
-pinApp.controller("UserController", function($scope, $window, userFactory) {
+pinApp.controller("UserController", function($scope, $window, UserFactory) {
 
   $scope.account = {
     email: "",
@@ -8,14 +8,14 @@ pinApp.controller("UserController", function($scope, $window, userFactory) {
   };
 
    $scope.register = () => {
-    userFactory.createUser($scope.account)
+    UserFactory.createUser($scope.account)
     .then( (userData) => {
       $scope.login();
     });
   };
 
   $scope.login = () => {
-    userFactory.loginUser($scope.account)
+    UserFactory.loginUser($scope.account)
     .then( (userData) => {
       $window.location.href = '#!/pin/home';
     });

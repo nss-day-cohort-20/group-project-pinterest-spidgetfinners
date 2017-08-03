@@ -1,18 +1,18 @@
 'use strict';
 
-pinApp.controller("PinController", function($scope, $window, PinFactory, userFactory) {
+pinApp.controller("PinController", function($scope, $window, PinFactory, UserFactory) {
 
   let currentUser = null;
 
-  userFactory.isAuthenticated(currentUser)
+  UserFactory.isAuthenticated(currentUser)
   .then((user) => {
-    currentUser = userFactory.getUser();
+    currentUser = UserFactory.getUser();
     fetchPins();
   });
 
   function fetchPins() {
     let pinArr = [];
-    PinFactory.getPins(currentUser)
+    PinFactory.getAllPins(currentUser)
     .then((pinList) => {
       let pinData = pinList.data;
       Object.keys(pinData).forEach((key) => {

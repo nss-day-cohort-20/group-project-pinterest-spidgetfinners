@@ -17,7 +17,7 @@ pinApp.controller("UserController", function($scope, $window, UserFactory) {
   $scope.login = () => {
     UserFactory.loginUser($scope.account)
     .then( (userData) => {
-      $window.location.href = '#!/pin/home';
+      $window.location.href = '#!/pin/view';
     });
   };
 

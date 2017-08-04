@@ -1,6 +1,6 @@
 'use strict';
 
-pinApp.factory("BoardFactory", function($q, $http, FirebaseUrl) {
+pinApp.factory("BoardFactory", function($q, $http, FirebaseUrl, FBcreds) {
 
 
   let getAllBoards = (userId) => {
@@ -19,7 +19,7 @@ pinApp.factory("BoardFactory", function($q, $http, FirebaseUrl) {
 
   let postNewBoard = (newBoard) => {
     return $q((resolve, reject) => {
-      $http.post(`${FirebaseUrl}board.json`,
+      $http.post(`${FirebaseUrl}boards.json`,
       angular.toJson(newBoard))
       .then((newBoardData) => {
         resolve(newBoardData);

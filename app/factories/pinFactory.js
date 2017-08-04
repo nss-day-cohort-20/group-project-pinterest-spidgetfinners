@@ -1,6 +1,6 @@
 'use strict';
 
-pinApp.factory("PinFactory", function($q, $http, FirebaseUrl) {
+pinApp.factory("PinFactory", function($q, $http, FirebaseUrl, FBcreds) {
 
     let getAllPins = (userId) => {
         console.log("userId", userId);
@@ -18,7 +18,7 @@ pinApp.factory("PinFactory", function($q, $http, FirebaseUrl) {
 
     let postNewPin = (newPin) => {
         return $q((resolve, reject) => {
-            $http.post(`${FirebaseUrl}pics.json`,
+            $http.post(`${FirebaseUrl}pins.json`,
                     angular.toJson(newPin))
                 .then((newPinData) => {
                     resolve(newPinData);

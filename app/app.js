@@ -24,7 +24,7 @@ pinApp.config( ($routeProvider) => {
   })
   .when('/pin/view', {
     templateUrl: 'partials/home.html',
-    controller: 'BoardController',
+    controller: 'HomeController',
     resolve: {isAuth}
   })
   .when('/pin/add-pin-form', {

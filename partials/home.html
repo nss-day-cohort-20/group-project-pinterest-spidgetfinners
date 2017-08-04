@@ -1,16 +1,10 @@
-<div ng-repeat="board in boards" class="card" style="width: 20rem" style="border: solid black 2px;" ng-controller="BoardController">
-  <img class="card-img-top"  alt="Card image cap" style="width: 20rem;">
-  <div class="card-block">
-    <h4 class="card-title">Card title</h4>
-    <p class="card-text"></p>
-    <a href="#" class="btn btn-primary" ">Edit</a>
-    <a href="#" class="btn btn-primary">Delete</a>
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a ng-click="fetchBoards()">Get Boards</a></li>
-      </ul>
+<div class="card-group">
+    <div class="card" ng-repeat="pinItem in pins">
+        <img class="card-img-top" ng-src="{{pinItem.url}}" alt="Card image cap">
+        <div class="card-block">
+            <h4 class="card-text">{{pinItem.userTitle}}</h4>
+            <p class="card-text">{{pinItem.description}}</p>
+            <p class="card-text">{{pinItem.catagory}}</p>
+        </div>
     </div>
-  </div>
 </div>
-
-

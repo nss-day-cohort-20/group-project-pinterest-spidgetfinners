@@ -11,7 +11,7 @@ pinApp.controller("BoardController", function($scope, $window, PinFactory, UserF
         });
 
     function fetchBoards() {
-    	console.log("test", fetchBoards);
+        console.log("test", fetchBoards);
         let boardArr = [];
         BoardFactory.getAllBoards(currentUser)
             .then((boardList) => {
@@ -29,16 +29,16 @@ pinApp.controller("BoardController", function($scope, $window, PinFactory, UserF
 
     $scope.boardTitle = "My New Board";
     $scope.boardItem = {
-    	userTitle: "",
+        userTitle: "",
         description: "",
         catagory: "",
-        uid: UserFactory.getUser()
     };
 
 
     $scope.saveBoard = () => {
-    	console.log("boardItem", $scope.boardItem);
-           BoardFactory.postNewBoard($scope.boardItem)
+        console.log("boardItem", $scope.boardItem);
+        $scope.boardItem.uid = UserFactory.getUser();
+        BoardFactory.postNewBoard($scope.boardItem)
             .then((data) => {
                 console.log("pin data", data);
                 $window.location.href = '#!/pin/home';

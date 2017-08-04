@@ -39,7 +39,7 @@ pinApp.config( ($routeProvider) => {
   })
   .when('/pin/create-pin-form', {
     templateUrl: 'partials/create-pin-form.html',
-    controller: 'PinController',
+    controller: 'createPinController',
     resolve: {isAuth}
   })
   .otherwise('/');

@@ -12,13 +12,9 @@ pinApp.factory("UserFactory", function($q, $http, FirebaseUrl, FBcreds) {
  let currentUser = null;
 
   let isAuthenticated = function() {
-    console.log("isAuthenticated called");
     return new Promise( (resolve, reject) => {
-      console.log("firing onAuthStateChanged");
       firebase.auth().onAuthStateChanged(function(user) {
-        console.log("onAuthStateChanged finished");
         if (user) {
-          console.log("user", user);
           currentUser = user.uid;
           resolve(true);
         } else {
@@ -35,7 +31,7 @@ pinApp.factory("UserFactory", function($q, $http, FirebaseUrl, FBcreds) {
   let createUser = (userObj) => {
     return firebase.auth().createUserWithEmailAndPassword(userObj.email, userObj.password)
     .catch( (err) => {
-      console.log("error creating user", err.message);
+      console.log("Error can not Compute!", err.message);
     });
   };
 
@@ -55,7 +51,7 @@ pinApp.factory("UserFactory", function($q, $http, FirebaseUrl, FBcreds) {
   let logoutUser = () => {
     return firebase.auth().signOut()
     .catch( (err) => {
-      console.log("error loggin' out, man", err.message);
+      console.log("error, Danger Will Robison!", err.message);
     });
   };
 

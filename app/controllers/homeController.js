@@ -1,6 +1,6 @@
 'use strict';
 
-pinApp.controller("HomeController", function($scope, $window, PinFactory, UserFactory) {
+pinApp.controller("HomeController", function($scope, $window, PinFactory, UserFactory, BoardFactory) {
 
     $scope.pins = [];
 

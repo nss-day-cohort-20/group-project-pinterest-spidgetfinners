@@ -1,10 +1,10 @@
 <div class="card-group">
     <div class="card" ng-repeat="pinItem in pins">
-        <img class="card-img-top" src="{{pinItem.url}}" alt="Card image cap">
+        <img class="card-img-top" ng-src="{{pinItem.url}}" alt="Card image cap">
         <div class="card-block">
             <h4 class="card-text">{{pinItem.userTitle}}</h4>
-            <p class="card-text">{{pinItem.description}}.</p>
-            <p class="card-text">{{pinItem.catagory}}.</p>
+            <p class="card-text">{{pinItem.description}}</p>
+            <p class="card-text">{{pinItem.catagory}}</p>
         </div>
     </div>
 </div>

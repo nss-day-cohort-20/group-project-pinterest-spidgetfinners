@@ -5,8 +5,7 @@ pinApp.factory("PinFactory", function($q, $http, FirebaseUrl, FBcreds) {
     let getAllPins = (userId) => {
         console.log("userId", userId);
         return $q((resolve, reject) => {
-            $http.get(`${FirebaseUrl}pins.json`)
-                // ?orderBy="uid"&equalTo=${userId}`)
+            $http.get(`${FirebaseUrl}pins.json?orderBy="uid"&equalTo="${userId}"`)
                 .then((pinData) => {
                     resolve(pinData);
                 })

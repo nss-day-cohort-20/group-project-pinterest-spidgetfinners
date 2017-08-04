@@ -1,10 +1,15 @@
-<div ng-repeat="pin in pins" class="card" style="width: 20rem" style="border: solid black 2px;" ng-controller="PinController">
-  <img class="card-img-top" src="{{pin.img}}" alt="Card image cap" style="width: 20rem;">
+<div ng-repeat="board in boards" class="card" style="width: 20rem" style="border: solid black 2px;" ng-controller="BoardController">
+  <img class="card-img-top"  alt="Card image cap" style="width: 20rem;">
   <div class="card-block">
     <h4 class="card-title">Card title</h4>
     <p class="card-text"></p>
-    <a href="#" class="btn btn-primary">Edit</a>
+    <a href="#" class="btn btn-primary" ">Edit</a>
     <a href="#" class="btn btn-primary">Delete</a>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a ng-click="fetchBoards()">Get Boards</a></li>
+      </ul>
+    </div>
   </div>
 </div>
 

@@ -35,6 +35,7 @@ pinApp.controller("BoardController", function($scope, $window, PinFactory, UserF
     };
 
 
+
     $scope.saveBoard = () => {
         console.log("boardItem", $scope.boardItem);
         $scope.boardItem.uid = UserFactory.getUser();
@@ -46,3 +47,4 @@ pinApp.controller("BoardController", function($scope, $window, PinFactory, UserF
     };
 
 });
+

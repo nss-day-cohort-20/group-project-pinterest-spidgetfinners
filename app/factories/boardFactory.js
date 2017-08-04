@@ -58,11 +58,14 @@ pinApp.factory("BoardFactory", function($q, $http, FirebaseUrl, FBcreds) {
         .catch((err) => {
           reject(err);
         });
+
       } else {
         console.log("id can't be found");
       }
     });
   };
 
+
     return { getAllBoards, postNewBoard, editNewBoard, deleteBoard };
+
 });

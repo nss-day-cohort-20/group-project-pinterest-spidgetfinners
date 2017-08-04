@@ -27,7 +27,7 @@ pinApp.controller("BoardController", function($scope, $window, PinFactory, UserF
             });
     }
 
-    $scope.boardTitle = "My New Board";
+    // $scope.boardTitle = "My New Board";
     $scope.boardItem = {
         userTitle: "",
         description: "",

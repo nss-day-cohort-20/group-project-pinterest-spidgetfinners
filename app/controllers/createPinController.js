@@ -1,19 +1,19 @@
 'use strict';
 
-pinApp.controller("create-pinController", function($scope, $window, PinFactory, UserFactory) {
+pinApp.controller("createPinController", function($scope, $window, PinFactory, UserFactory) {
  
- $scope.pinTitle = "My New Pin";
+ // $scope.pinTitle = "My New Pin";
     $scope.pinItem = {
     	userPinTitle: "",
         description: "",
         catagory: "",
         url: "",
-        uid: PinFactory.getAllPins()
     };
 
 
-    $scope.savepin = () => {
+    $scope.savePin = () => {
     	console.log("pinItem", $scope.pinItem);
+    	$scope.pinItem.uid = UserFactory.getUser();
            PinFactory.postNewPin($scope.pinItem)
             .then((data) => {
                 console.log("pin data", data);

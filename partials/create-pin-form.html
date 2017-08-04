@@ -47,10 +47,11 @@
     </div>
 =======
 <div class="createPinForm">
-	<input type="text" name="Title" ng-model="pinItem.userPinTitle">
-	<input type="text" name="Description" ng-model="pinItem.description">
-	<input type="text" name="Catagory" ng-model="pinItem.catagory">
-	<img type="text" name="Catagory" ng-model="pinItem.catagory">
+	<input type="text" name="Title" ng-model="pinItem.userPinTitle" placeholder="Title">
+	<input type="text" name="Description" ng-model="pinItem.description" placeholder="Description">
+	<input type="text" name="Catagory" ng-model="pinItem.catagory" placeholder="Catagory">
+	<input type="text" ng-model="pinItem.url">
+	<img src="{{pinItem.url}}" alt="some_text" style="width:128px;height:128px;">
 	<input type="button" class="btn btn-default"  ng-click="savePin()">
 >>>>>>> master
 </div>
